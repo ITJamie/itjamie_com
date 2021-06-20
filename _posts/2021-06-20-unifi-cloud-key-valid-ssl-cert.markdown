@@ -9,7 +9,8 @@ I wanted to be able to access it locally though over https with a valid cert.
 It turns out the cloudkey just runs a basic debian strech install with standard apt commands! So heres how I made that happpen.
 
 Pre-requisites: 
-  *  A domain with cloudflare DNS setup & API keys setup
+  * unifi cloud key
+  * A domain with cloudflare DNS setup & API keys setup
 
 First steps. 
   - Make sure the Cloud Key is upto date.
@@ -39,6 +40,10 @@ Example Content
 dns_cloudflare_email = you@example.com
 dns_cloudflare_api_key = wen_lambo?wen_moon?
 ```
+Secure permissions on cloudflare creds (stops warnings in certbot output)
+{% highlight bash %}
+chmod 600 ~/.secrets/certbot/cloudflare.ini
+{% endhighlight %}
 
 Time to request the cert!
 {% highlight bash %}
@@ -62,4 +67,4 @@ Add the following to your root user crontab file (use `crontab -e`)
 41 2 * * * certbot renew --post-hook "service unifi-core restart"
 {% endhighlight %}
 
-Now you should be able to access your cloudkey locally via fqdn_of_your_cloudkey.example.com with a valid cert!
+Now you should be able to access your cloudkey locally via `fqdn_of_your_cloudkey.example.com` with a valid cert!
