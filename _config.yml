@@ -25,7 +25,7 @@ timezone: Europe/Dublin
 #   and focuses on text presentation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'http://itjamie.com'
 
 github:
   username: ITJamie             # change to your github username
@@ -155,6 +155,7 @@ exclude:
   - gulpfile.js
   - node_modules
   - '*.json'
+  - '_site/'
 
 jekyll-archives:
   enabled: [categories, tags]
@@ -173,6 +174,5 @@ tagline: Random tech and thoughts...
 description: >-
   Random tech and thoughts...
 
-url: "http://itjamie.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 avatar: https://en.gravatar.com/userimage/937509/b52977de0f1ad47561e62cafed301e3e.jpeg
