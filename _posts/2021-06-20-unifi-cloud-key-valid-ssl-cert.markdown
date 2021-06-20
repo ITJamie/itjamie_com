@@ -63,8 +63,8 @@ service unifi-core restart
 {% endhighlight %}
 
 Add the following to your root user crontab file (use `crontab -e`)
-{% highlight bash %}
+```
 41 2 * * * certbot renew --post-hook "service unifi-core restart"
-{% endhighlight %}
+```
 
 Now you should be able to access your cloudkey locally via `fqdn_of_your_cloudkey.example.com` with a valid cert!
